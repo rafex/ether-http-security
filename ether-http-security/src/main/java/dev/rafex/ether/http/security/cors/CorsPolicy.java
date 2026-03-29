@@ -5,6 +5,22 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * Política de seguridad CORS para controlar el acceso entre orígenes.
+ * <p>
+ * Configura los encabezados HTTP CORS que permiten o restringen el acceso
+ * a recursos desde dominios diferentes al servidor.
+ * </p>
+ *
+ * @param allowAnyOrigin Permite cualquier origen (riesgo de seguridad, usar solo en desarrollo)
+ * @param allowedOrigins Lista de orígenes permitidos explícitamente
+ * @param allowedMethods Métodos HTTP permitidos (GET, POST, etc.)
+ * @param allowedHeaders Headers permitidos en las solicitudes
+ * @param exposedHeaders Headers expuestos en la respuesta
+ * @param allowCredentials Indica si se permiten credenciales (cookies, tokens)
+ * @param maxAgeSeconds Tiempo de cache de la preflight request
+ * @param varyOrigin Agrega header Vary: Origin para evitar cache incorrecto
+ */
 public record CorsPolicy(boolean allowAnyOrigin, List<String> allowedOrigins, List<String> allowedMethods,
         List<String> allowedHeaders, List<String> exposedHeaders, boolean allowCredentials, int maxAgeSeconds,
         boolean varyOrigin) {

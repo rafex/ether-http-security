@@ -2,6 +2,13 @@ package dev.rafex.ether.http.security.ip;
 
 import java.util.List;
 
+/**
+ * Política de control de acceso basada en direcciones IP.
+ * <p>
+ * Permite definir listas de permitidos y denegados para controlar
+ * qué direcciones IP pueden acceder a los recursos.
+ * </p>
+ */
 public record IpPolicy(List<String> allowList, List<String> denyList) {
 
     public IpPolicy {
