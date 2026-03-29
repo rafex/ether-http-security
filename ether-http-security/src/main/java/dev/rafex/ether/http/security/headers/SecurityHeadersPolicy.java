@@ -3,6 +3,13 @@ package dev.rafex.ether.http.security.headers;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * Política de seguridad para encabezados HTTP.
+ * <p>
+ * Configura encabezados de seguridad como CSP, HSTS, X-Frame-Options,
+ * para proteger contra ataques comunes como XSS, clickjacking, etc.
+ * </p>
+ */
 public record SecurityHeadersPolicy(boolean contentTypeOptions, boolean frameOptions, boolean referrerPolicy,
         boolean permissionsPolicy, boolean hsts, boolean noStore, String contentSecurityPolicy,
         Map<String, String> customHeaders) {

@@ -6,6 +6,13 @@ import dev.rafex.ether.http.security.ip.IpPolicy;
 import dev.rafex.ether.http.security.proxy.TrustedProxyPolicy;
 import dev.rafex.ether.http.security.ratelimit.RateLimitPolicy;
 
+/**
+ * Perfil de seguridad HTTP que agrupa todas las políticas de seguridad.
+ * <p>
+ * Define la configuración completa de seguridad para un servidor HTTP,
+ * incluyendo CORS, encabezados de seguridad, control de IPs y rate limiting.
+ * </p>
+ */
 public record HttpSecurityProfile(CorsPolicy cors, SecurityHeadersPolicy headers, TrustedProxyPolicy trustedProxies,
         IpPolicy ipPolicy, RateLimitPolicy rateLimit) {
 

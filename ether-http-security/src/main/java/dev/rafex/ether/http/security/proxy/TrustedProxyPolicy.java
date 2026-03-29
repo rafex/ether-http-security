@@ -2,6 +2,13 @@ package dev.rafex.ether.http.security.proxy;
 
 import java.util.List;
 
+/**
+ * Política para configurar proxy de confianza en servidores.
+ * <p>
+ * Define qué proxies son de confianza y cómo extraer la IP real del cliente
+ * cuando hay proxies o balanceadores de carga en medio.
+ * </p>
+ */
 public record TrustedProxyPolicy(List<String> trustedSources, boolean trustForwardedHeader, boolean forwardedOnly,
         boolean preferRightMostForwardedFor) {
 
